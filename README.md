@@ -1,7 +1,7 @@
 # ThreadPool
 C++ 11/14 implementation of simple Threadpool library with unit tests using Code block Unit test library.
 
-**Prerequsites:**
+**Prerequisites:**
 - g++ compiler with C++11/14 support
 - MinGW package for Windows execution
 - Code Block unit test library framework at link <br />
