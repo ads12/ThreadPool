@@ -62,8 +62,11 @@ class ThreadPool
        unique_lock<mutex> ul(this->m_mutex);
        this->m_condvar.wait(ul, [=] {return this->m_bStartConsThreads;});
 
-       IntMem.free(this->m_vecInt.back());
-       this->m_vecInt.pop_back();
+       if(m_vecInt.size() > 0)
+       {
+         IntMem.free(this->m_vecInt.back());
+         this->m_vecInt.pop_back();
+       }
        //Print Thread ID
        cout << "Thread ID : "<<this_thread::get_id() <<" removed vector element"<<"\tVector size::"<<this->m_vecInt.size()<<endl;
      }
